@@ -3,11 +3,11 @@
 require 'functions.php';
 
 if (isset($_POST['tambah'])) {
-    if(tambah($_POST)> 0 ) {
+    if(tambah($_POST) > 0 ) {
         echo "<script>
 
-            alert('data berhasil di tambahkan');
-            document.location.herf = 'Latihan3.php';
+            alert('data berhasil di tambahkan!');
+            document.location.href = 'Latihan3.php';
 
                 </script>";
     }else{
@@ -26,27 +26,27 @@ if (isset($_POST['tambah'])) {
 </head>
 <body>
     <h3>Form Tambah Data Mahasiswa</h3>
-    <from action="" method="POST">
+    <form action="" method="POST">
     <ul>
         <li>
             <label>
 
             Nama :
-            <input type="text" name="Nama" autofocus require>
+            <input type="text" name="Nama" autofocus required>
               </label>
         </li>
            <li>
            <label>
 
             NRP :
-            <input type="text" name="nrp">
+            <input type="text" name="nrp" required>
             </label>
            </li>
            <li>
            <label>
 
             Email :
-            <input type="text" name="email">
+            <input type="text" name="email" required>
           </label>
            </li>
 
@@ -54,7 +54,7 @@ if (isset($_POST['tambah'])) {
            <label>
 
             Jurusan :
-            <input type="text" name="jurusan">
+            <input type="text" name="jurusan"required>
             </label>
            </li>
            
@@ -62,7 +62,7 @@ if (isset($_POST['tambah'])) {
            <label>
 
             Gambar :
-            <input type="text" name="gambar">
+            <input type="text" name="gambar"required>
             </label>
            </li>
            <li>
@@ -70,5 +70,6 @@ if (isset($_POST['tambah'])) {
                     <button type="submit" name="tambah">Tambah Data!</button>
            </li>
     </ul>
+    </form>
 </body>
 </html>
