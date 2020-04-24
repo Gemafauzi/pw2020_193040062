@@ -22,12 +22,35 @@ $makanan = query("SELECT * FROM makanan");
         padding: 20px;
       }
      
-
-  </style>
+.add{
+  box-shadow: 5px 5px #888888;
+  border:none;
+  padding: 15px;
+  width: 95px;
+  text-align: center;
+  background-color: yellow;
+  text-decoration: none;
+  border-radius: 15px;
+  height: 10px;
+}.container{
+  width: 1080px;
+  margin: auto;
+}
+.add a{
+  text-decoration: none;
+  color: black;
+}
+  </style> 
 </head>
 
 <body>
+<div class="container">
+<div class="add">
+        <a href="tambah.php">Tambah Data</a>
+    </div>
+    <br>
   <table  border="1" cellspading="5">
+    <form action=""method="GET">
     <tr>
         <th>No</th>
         <th>Aksi</th>
@@ -46,7 +69,7 @@ $makanan = query("SELECT * FROM makanan");
         <td><?= $i++ ?></td>
         <td>
           <a href="">Ubah</a>
-          <a href="">Hapus</a>
+          <a href="../hapus.php?=<?=$m['ID']?>">Hapus</a>
         </td>
         <td><img src="../assets/img/<?= $m['foto']; ?>"style="width:300px"></td>
         <td><?= $m['Nama']; ?></td>
@@ -55,7 +78,10 @@ $makanan = query("SELECT * FROM makanan");
         <td><?= $m['Asal']; ?></td>
       </tr>
     <?php endforeach; ?>
+    </form>
   </table>
+  
+</div>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
 
 <html>
     <head>
-        <title>Latihan6a_193040062</title>
+        <title>Latihan5c_193040062</title>
         <link rel="stylesheet" href="css/styleCindex.css" type="text/css">
     </head>
     
