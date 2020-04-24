@@ -14,13 +14,21 @@ $mahasiswa  = query("SELECT * FROM mahasiswa");
     <title>Daftar Mahasiswa</title>
 </head>
 <body>
-<h3>Daftar Mahasiswa</h3>
+<style>
+    body{
+        background-color: skyblue;
+    }
+        table {
+           background-color:  yellow;
+        }
+    </style>
+<h1 align="center">Daftar Mahasiswa</h1>
 <a href="tambah.php">Tambah Data Mahasiswa</a>
 <br></br>
 
 
 
-<table border="1" cellpadding="10" cellpadding="0">
+<table border="1" cellpadding="10" cellpadding="0" align="center"width="1500px"
     <tr>
             <th>ID</th>
             <th>Gambar</th>

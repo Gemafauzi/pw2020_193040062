@@ -9,13 +9,21 @@ $mahasiswa  = query("SELECT * FROM mahasiswa");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body{
+            background-color: skyblue; 
+        }
+        table {
+           background-color:  yellow;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Mahasiswa</title>
 </head>
 <body>
-<h3>Daftar Mahasiswa</h3>
-<table border="1" cellpadding="10" cellpadding="0">
+<h1 align="center">Daftar Mahasiswa</h1>
+<table border="1" cellpadding="10" cellpadding="0" align="center">
     <tr>
             <th>ID</th>
             <th>Gambar</th>
