@@ -39,7 +39,7 @@ function tambah($data)
     $query  = "INSERT INTO
                 mahasiswa
                 VALUES
-                (null, '$nama', '$nrp', '$email', '$jurusan', '$gambar')
+                (null, '$nama','$nrp','$email','$jurusan','$gambar');
                 ";
     mysqli_query($conn, $query);
     echo mysqli_error($conn);
