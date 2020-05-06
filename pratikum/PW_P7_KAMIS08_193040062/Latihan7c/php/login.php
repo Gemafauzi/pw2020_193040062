@@ -51,10 +51,12 @@ if (isset($_POST['submit'])) {
     <style>
       .container{
         width: 300px;
+        border: 5px solid black;
       }
       body{
         margin-top: 200px;
-        
+        background-color: blueviolet;
+
       }
         
     </style>
