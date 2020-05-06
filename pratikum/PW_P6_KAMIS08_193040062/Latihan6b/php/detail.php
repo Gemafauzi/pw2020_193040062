@@ -17,6 +17,14 @@
         <title>Latihan5cDetail_193040062</title>
     </head>
     <body>
+    <style>
+    body{
+        background-color: skyblue;
+    }
+        table {
+           background-color:  black;
+        }
+    </style>
     <h1>makanan</h1>
         <div class="container">
             <div class="foto">

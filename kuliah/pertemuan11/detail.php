@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 $id = $_GET['id'];
-$m  = query("SELECT * FROM mahasiswa WHERE  id = $id");
+$m  = query("SELECT * FROM mahasiswa WHERE id = $id");
 
 
 ?>
@@ -20,7 +20,8 @@ $m  = query("SELECT * FROM mahasiswa WHERE  id = $id");
         <li>Nama : <?= $m['Nama']; ?></li>
         <li>Email : <?= $m['email']; ?></li>
         <li>Jurusan : <?= $m['jurusan']; ?></li>
-        <li><a herf="">ubah</a> |  <a href="hapus.php?id=<? $m ['id']; ?>">hapus</a></li> 
+        <li><a href="ubah.php?id=<?= $m['ID']; ?>">ubah</a> |  <a href="hapus.php?id=<?= $m['ID']; 
+        ?>" onclick="return confrim ('apakah anda yakin?');">hapus</a></li> 
         <li><a href="index.php">kembali ke daftar Mahasiswa</a></li>  
     </ul>
 </body>
