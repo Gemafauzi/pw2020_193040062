@@ -1,18 +1,9 @@
 <?php
-session_reset();
-
-if(!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit;
-
-}
-
 
 require 'functions.php';
-$mahasiswa  = query("SELECT * FROM mahasiswa");
- 
-?>
 
+$mahasiswa = query("SELECT * FROM mahasiswa");
+?>
 
 
 <!DOCTYPE html>
@@ -21,9 +12,7 @@ $mahasiswa  = query("SELECT * FROM mahasiswa");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Mahasiswa</title>
-</head>
-<body>
-<style>
+    <style>
     body{
         background-color: skyblue;
     }
@@ -31,6 +20,8 @@ $mahasiswa  = query("SELECT * FROM mahasiswa");
            background-color:  yellow;
         }
     </style>
+</head>
+<body>
 <h1 align="center">Daftar Mahasiswa</h1>
 <a href="tambah.php">Tambah Data Mahasiswa</a>
 <br></br>

@@ -74,25 +74,27 @@ function ubah($data)
     echo mysqli_error($conn);
     return mysqli_affected_rows($conn);
 }
-function login($data){
-    $conn = koneksi();
+function login($data)
+{
+  $conn = koneksi();
 
-    $username = htmlspecialchars($data['username']);
-    $password = htmlspecialchars($data['password']);
+  $username = htmlspecialchars($data['username']);
+  $password = htmlspecialchars($data['password']);
 
+  //cek dulu username
+  if ($user = query("SELECT * FROM user WHERE username = '$username'")) {
+    // Cek Password
+    if (password_verify($password, $user['password'])) {
 
-    if($username == 'admin' && $password == '12345') {
-    
-
-
-        header("Location: index.php");
-        exit;
-}else {
-     return [
-        'error' => true,
-        'pesan' => 'Username / Password Salah!'
-     ];
+      // set session
+      $_SESSION['login'] = true;
+      header("Location: index.php");
+      exit;
     }
-}    
-
+  }
+  return [
+    'error' => true,
+    'pesan' => 'Username / Password Salah!'
+  ];
+}
 ?>

@@ -1,18 +1,21 @@
 <?php
 session_start();
 
-
-
-
+if(!isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit;
+}
 
 require 'functions.php';
 
-if(isset($_POST['login'])){
-   $login = login($_POST);
+// Ketika tombol login ditekan
+if (isset($_POST['login'])) {
+  $login = login($_POST);
 }
-
-
 ?>
+
+
+
 
 
 
@@ -26,29 +29,29 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <a href="logout.php">Logout</a>
-    <h3>From Login</Form></h3>
+    <h3>From Login</h3>
+    <form action="" method="POST">
     <?php if(isset($login['error'])) : ?>
 
-        <p><?= $login['pesan']; ?></p>
+        <p>username / password salah</p>
     <?php  endif; ?>
-    <form action="" method="POST">
     <ul>
         <li>
             <label>
             
             Username :
-            <input type="text"name="username" autofocus autocapitalize="off" required>
+            <input type="text" name="username" autofocus autocapitalize="off" required>
             </label>
         </li>
         <li>
         <label>
             
             Password  :
-            <input type="password"name="password"require>
+            <input type= "password" name="password" required>
             </label>
         </li>
         <li>
-        <button type="submit"name="login">Login</button>
+        <button type="submit" name="login">Login</button>
         
         </li>
 
