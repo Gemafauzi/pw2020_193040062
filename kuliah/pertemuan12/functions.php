@@ -97,4 +97,48 @@ function login($data)
     'pesan' => 'Username / Password Salah!'
   ];
 }
+function registrasi($data)
+{
+  $conn = koneksi();
+
+  $username = htmlspecialchars(strtolower($data['username']));
+  $password1 = mysqli_real_escape_string($conn, $data['password1']);
+  $password2 = mysqli_real_escape_string($conn, $data['password2']);
+
+  if (empty('$username')|| empty($password1)|| empty($password2)) {
+    echo "<script>
+      alert('Username / Password tidak boleh kosong!');
+      document.location.href = 'registrasi.php';
+      </script>";
+    return false;
+  }
+  if (query("SELECT * FROM user WHERE username = '$username'")) {
+    echo "<script>
+      alert('Username sudah terdaftar!');
+      document.location.href = 'registrasi.php';
+      </script>";
+    return false;
+  }
+  if ($password1 !== $password2) {
+    echo "<script>
+      alert('Password tidak sesuai!');
+      document.location.href = 'registrasi.php';
+      </script>";
+    return false;
+  }
+  if (strlen($password1) < 5) {
+    echo "<script>
+    alert('Password terlalu pendek!');
+    document.location.href = 'registrasi.php';
+    </script>";
+  }
+  $password_baru = password_hash($password1, PASSWORD_DEFAULT);
+  $query = "INSERT INTO user
+            VALUES 
+            (null, '$username', '$password_baru')";
+
+  mysqli_query($conn, $query) or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
+
 ?>

@@ -1,5 +1,10 @@
 <?php
+session_start();
 
+if(!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
 require 'functions.php';
 
 $mahasiswa = query("SELECT * FROM mahasiswa");
@@ -23,6 +28,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 </head>
 <body>
 <h1 align="center">Daftar Mahasiswa</h1>
+<a href="logout.php">Logout</a><br><br>
 <a href="tambah.php">Tambah Data Mahasiswa</a>
 <br></br>
 
