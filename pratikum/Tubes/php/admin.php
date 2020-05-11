@@ -52,9 +52,7 @@ if(isset($_GET['keyword'])){
   <div class="container">
     <br>
     <div class="add">
-    <a href="tambah.php">
-    <button type="button" class="btn btn-warning">Tambah Data</button>
-    </a>  
+    <button type="button" class="btn btn-warning"><a href="tambah.php">Tambah Data</a></button>
     </div>
     <div class="logout">
       <a href="logout.php" class="btn-warning">Logout</a>
@@ -65,7 +63,7 @@ if(isset($_GET['keyword'])){
     <div class="input-group-prepend">
     </div>
     <input type="text" name ="keyword" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-    <button class="btn btn-warning" type="submit" name="cari">Cari!</button>
+    <button class="btn btn-warning" type="submit" name="cari">Pesanan</button>
   </div>
       </form>
   
@@ -73,7 +71,7 @@ if(isset($_GET['keyword'])){
     <table class="table table-sm table-dark text-center">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">No</th>
         <th scope="col">Aksi</th>
         <th scope="col">Gambar</th>
         <th scope="col">Nama</th>
