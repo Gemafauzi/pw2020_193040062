@@ -26,13 +26,13 @@ if (isset($_POST['register'])) {
     <style>
       .container{
         width: 300px;
-        border: 5px solid black;
       }
       body{
         margin-top: 200px;
-        background-color: yellow;
-
+        background-color: darkslategrey;
       }
+
+     
         
     </style>
 
@@ -40,21 +40,33 @@ if (isset($_POST['register'])) {
     <title>Hello, world!</title>
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+  <a class="navbar-brand" href="#">Kuliner Gema</a>
+    <div class="container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  </div>
+</nav>
     <div class="container">
     <form action="" method="POST">
     <table>
+      <h1>Registrasi</h1>
       <tr>
         <td><label for="username">Username</label></td>
         <td>:</td>
-        <td><input type="text" name="username"></td>
+        <td><input placeholder="Masukan Username anda " type="text" name="username"></td>
       </tr>
       <tr>
         <td><label for="password">Password</label></td>
         <td>:</td>
-        <td><input type="password" name="password"></td>
+        <td><input placeholder="Masukan Password  anda " type="password" name="password"></td>
       </tr>
     </table>
-    <button type="submit" name="register">Register</button>
+    <button type="submit"  class="btn btn-primary" name="register">Register</button>
+    <button type="submit" class="btn btn-primary" name="tambah">Kembali</a></button>
 
   </form>
   

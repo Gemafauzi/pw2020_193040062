@@ -17,21 +17,74 @@ function query($sql){
     return $rows;
     
 }
+function upload(){
+  $nama_file = $_FILES['foto']['name'];
+  $tipe_file = $_FILES['foto']['type'];
+  $ukuran_file = $_FILES['foto']['size'];
+  $error = $_FILES['foto']['error'];
+  $tmp_file = $_FILES['foto']['tmp_name'];
+  
+
+
+  if($error == 4){
+    //   echo "<script>
+    //             alert('Pilih foto terlebih dahulu!');
+    //             </script>";
+                return 'sate.jpg';
+  }
+
+
+  $daftar_foto = ['jpg', 'jpeg', 'png'];
+  $ekstensi_file = explode('.', $nama_file);
+  $ekstensi_file = strtolower (end($ekstensi_file));
+  if(!in_array($ekstensi_file, $daftar_foto)) {
+        echo "<script>
+                  alert('yang anda Pilih bukan foto!');
+                  </script>";
+                  return false;
+  }
+
+  if($tipe_file != 'image/jpeg' &&  $tipe_file != 'image/png'){
+    echo "<script>
+    alert('yang anda Pilih bukan foto!');
+    </script>";
+    return false;
+  }
+  if($ukuran_file > 5000000){
+    echo "<script>
+    alert('Ukuran anda terlalu besar!');
+    </script>";
+    return false;
+  }
+  $nama_file_baru = uniqid();
+  $nama_file_baru .= '.';
+  $nama_file_baru .= $ekstensi_file;
+  move_uploaded_file($tmp_file, '../assets/img/' . $nama_file_baru);
+
+  return $nama_file_baru;
+}
+
+
 function tambah($data)
 {
     $conn   = koneksi();
     
-    $foto    = htmlspecialchars($data['foto']);
+    // $foto    = htmlspecialchars($data['foto']);
     $nama     = htmlspecialchars($data['Nama']);
     $harga   = htmlspecialchars($data['Harga']);
     $asal =htmlspecialchars($data['Asal']);
     $jenis  =htmlspecialchars($data['Jenis']);
 
+    $foto = upload();
+    if (!$foto){
+        return false;
+    }
+
 
     $query  = "INSERT INTO
                makanan
                 VALUES
-                (null, '$foto', '$nama', '$harga', '$asal', '$jenis');
+                (null, '$foto', '$nama', '$harga', '$asal', '$jenis')
                 ";
     mysqli_query($conn, $query);
     echo mysqli_error($conn);
@@ -53,11 +106,20 @@ function ubah($data)
 {
     $conn   = koneksi();
     $id     = $data['ID'];
-    $foto    = htmlspecialchars($data['foto']);
+    // $foto    = htmlspecialchars($data['foto']);
     $nama     = htmlspecialchars($data['Nama']);
     $harga   = htmlspecialchars($data['Harga']);
     $asal =htmlspecialchars($data['Asal']);
     $jenis  =htmlspecialchars($data['Jenis']);
+    $foto_lama = htmlspecialchars($data['foto_lama']);
+
+    $foto = upload();
+    if(!$foto) {
+        return false;
+    }
+    if ($foto == 'sate.jpg') {
+        $foto = $foto_lama;
+    }
 
 
     $query  = "UPDATE

@@ -30,9 +30,9 @@ if(isset($_GET['keyword'])){
     <title>Jual Beli Makanan</title>
 
     <style>
-      body{
-        background-color: teal;
-      }
+     .footer{
+       width :auto;
+     }
       .container{
       
         margin:auto;
@@ -44,8 +44,8 @@ if(isset($_GET['keyword'])){
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
-  <a class="navbar-brand" href="#">Kuliner Gema</a>
-    <div class="container">
+  <a class="navbar-brand" href="container">Kuliner Gema</a>
+    <div class="container bg-warning">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -75,7 +75,7 @@ if(isset($_GET['keyword'])){
   </div>
 </nav>
 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel carousel-lg slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="assets/img/1.png" alt="First slide" width="auto" height="600px">
@@ -99,7 +99,7 @@ if(isset($_GET['keyword'])){
   
   
     
-    <table class="table table-sm table-dark text-center">
+    <table class="table table-responsive-sm table-dark text-center mb-0">
     <thead>
       <tr>
         <th scope="col">No</th>
@@ -137,6 +137,33 @@ if(isset($_GET['keyword'])){
     </tbody>
   </table>
   </div>
+
+
+  <footer class="footer py-5 bg-warning pl-4">
+  <div class="row">   
+    <div class="col-12 col-md bg-warning">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+      <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Manager</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Rifki Gema f</a></li>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Alamat</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="https://goo.gl/maps/UBMwUkBa4NnZZdjv9">KP.PARIGILAME 003/013 CIWARUGA KEC.PARONGPONG.</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Contact</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">WA:081220686342</a></li>
+        <li><a class="text-muted" href="https:/instagram.com/bngkigem">Instagram <img src="assets/img/ig.jpg" width="20px"></a></li>
+      </ul>
+    </div>
+</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

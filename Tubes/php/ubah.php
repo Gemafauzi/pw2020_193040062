@@ -33,6 +33,14 @@ if (isset($_POST['ubah'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+        .navbar-brand{
+            color: white !important;
+        }
+        body{
+            background-color: darkslategrey  !important;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -47,15 +55,15 @@ if (isset($_POST['ubah'])) {
 </head>
 <body>
     <h3>Form Ubah Data Makanan</h3>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="ID" id="ID" value="<?= $m['ID']; ?>">
     <ul>
         <li>
+            <input type="hidden" name="foto_lama" value="<?= $m['foto']; ?>">
             <label>
-
             Foto :</label><br>
-            <input type="text" name="foto" autofocus required value="<?= $m['foto']; ?>"><br>
-              
+            <img src="../assets/img/<?= $m['foto']; ?>" height="250" class="img-preview">
+            <input  class="foto" type="file" name="foto" onchange="previewImage()"><br>
         </li>
            <li>
            <label>
@@ -96,9 +104,10 @@ if (isset($_POST['ubah'])) {
            
            
                     <button type="submit" name="ubah">Ubah Data!</button>
+                    <button type="submit" name="tambah"><a href="admin.php">Kembali!</a></button>
     </ul>
     </form>
-</body>
-</html>
+        <script src="../assets/js/script.js"></script>
+
 </body>
 </html>

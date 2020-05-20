@@ -51,26 +51,29 @@ if (isset($_POST['submit'])) {
     <style>
       .container{
         width: 300px;
-        border: 5px solid black;
+      
       }
       body{
         margin-top: 200px;
-        background-color: blueviolet;
+        background-color: darkslategrey;
 
       }
         
     </style>
 
 
-    <title>Hello, world!</title>
+    <title>Halaman Login</title>
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+  <a class="navbar-brand" href="#">Kuliner Gema</a>
+</nav>
     <div class="container">
   <form method="POST">
   <div class="form-group">
-    <?php if (isset($eror)):?>
-      <p style="color: red; font-style: italic;">Username atau Password Salah</p> 
-    <?php endif; ?> 
+  <?php if (isset($error)) : ?>
+              <p style="color: red; font-style: italic;"> Username dan Password salah!!</p>
+            <?php endif; ?>
     <label for="username">Username</label>
     <input type="username" name="username" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp">
   </div>
@@ -83,6 +86,7 @@ if (isset($_POST['submit'])) {
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary" name="submit">Login</button>
+  <button type="submit" class="btn btn-primary" name="tambah">Kembali!</a></button>
   <div class="registrasi">
     <p>Belum punya akun ? Registrasi <a href="registrasi.php">Disini</a></p>
   </div>

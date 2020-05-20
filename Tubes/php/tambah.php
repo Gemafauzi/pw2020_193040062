@@ -29,28 +29,37 @@ if (isset($_POST['tambah'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+        .navbar-brand{
+            color: white !important;
+        }
+        body{
+            background-color: darkslategrey  !important;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tambah Makanan</title>
 </head>
 <body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makanan</title>
 </head>
 <body>
-    <h3>Form Tambah Data Makanan</h3>
-    <form action="" method="POST">
+    <h3>Form Tambah Data Makanan</h3> 
+    <form action="" method="POST" enctype="multipart/form-data">
     <ul>
         <li>
             <label>
 
             Foto :</label><br>
-            <input type="text" name="foto" autofocus required><br>
-              
+            <input class="foto" type="file" name="foto" onchange="previewImage()"><br>
+                    <img src="../assets/img/sate.jpg" height="250" class="img-preview">
         </li>
            <li>
            <label>
@@ -91,10 +100,11 @@ if (isset($_POST['tambah'])) {
            
            
                     <button type="submit" name="tambah">Tambah Data!</button>
-                    <button type="submit" name="tambah"><a href="../index.php">Kembali!</a></button>
+                    <button type="submit" name="tambah"><a href="admin.php">Kembali!</a></button>
+                    
     </ul>
     </form>
-</body>
-</html>
+    <script src="../assets/js/script.js"></script>
+
 </body>
 </html>
